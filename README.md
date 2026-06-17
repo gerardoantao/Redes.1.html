@@ -1,10 +1,18 @@
-# Redes.1.html
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>¡Gran Rifa Semanal 100! 💰</title>
+    <title>¡Gran Rifa Semanal Digital! 💰</title>
+    
+    <!-- Configuración para Redes Sociales (Facebook, Insta, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="👑 ¡GRAN RIFA SEMANAL DIGITAL! 💰">
+    <meta property="og:description" content="🎰 ¡Solo 100 números! Elegí tu número de la suerte en tiempo real. ¡El pozo está acumulado y crece sin parar! 🔥">
+    <meta property="og:url" content="https://gerardoantao.github.io/Redes.rifa/redes.html">
+    <meta property="og:image" content="https://gerardoantao.github.io/Redes.rifa/preview.jpg">
+
     <style>
         html, body {
             margin: 0;
@@ -12,7 +20,7 @@
             width: 100%;
             min-height: 100%;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: radial-gradient(circle at top, #1e1b4b, #0f172a, #020617); /* Fondo galáctico/casino profundo */
+            background: radial-gradient(circle at top, #1e1b4b, #0b0f19, #020617);
             color: #ffffff;
             overflow-x: hidden;
         }
@@ -20,58 +28,74 @@
         .hero-container {
             width: 100%;
             box-sizing: border-box;
-            padding: 30px 20px;
+            padding: 40px 20px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Animación de parpadeo neón para el título */
-        @keyframes pulso {
-            0% { transform: scale(1); text-shadow: 0 0 10px #38bdf8; }
-            50% { transform: scale(1.03); text-shadow: 0 0 25px #06b6d4, 0 0 40px #3b82f6; }
-            100% { transform: scale(1); text-shadow: 0 0 10px #38bdf8; }
+        /* Título Neón con animación de pulso continuo */
+        @keyframes pulsoNeon {
+            0% { text-shadow: 0 0 10px #38bdf8, 0 0 20px #3b82f6; transform: scale(1); }
+            50% { text-shadow: 0 0 25px #06b6d4, 0 0 50px #6366f1, 0 0 70px #a855f7; transform: scale(1.02); }
+            100% { text-shadow: 0 0 10px #38bdf8, 0 0 20px #3b82f6; transform: scale(1); }
         }
 
         .emoji-principal {
-            font-size: 60px;
-            margin-bottom: 10px;
-            filter: drop-shadow(0 0 15px rgba(234, 179, 8, 0.6));
+            font-size: 65px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 20px #eab308);
+            animation: flotar 3s infinite ease-in-out;
+        }
+
+        @keyframes flotar {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
 
         h1 {
-            font-size: 32px;
+            font-size: 34px;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin: 0 0 10px 0;
-            background: linear-gradient(to right, #38bdf8, #60a5fa, #c084fc);
+            margin: 0 0 12px 0;
+            background: linear-gradient(to right, #38bdf8, #818cf8, #c084fc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: pulso 3s infinite ease-in-out;
+            animation: pulsoNeon 2.5s infinite ease-in-out;
         }
 
         .tagline {
             font-size: 16px;
             color: #94a3b8;
-            max-width: 320px;
-            line-height: 1.4;
-            margin-bottom: 30px;
+            max-width: 340px;
+            line-height: 1.5;
+            margin-bottom: 35px;
         }
 
-        /* Cartel de Pozo Enorme y Adictivo */
+        /* CARTEL DEL POZO: Reacciona con brillo al pasar el mouse/dedo */
         .mega-pozo-box {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(147, 51, 234, 0.4));
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(147, 51, 234, 0.4));
             border: 2px solid #a855f7;
             border-radius: 24px;
-            padding: 25px 20px;
-            width: 90%;
-            max-width: 360px;
+            padding: 30px 20px;
+            width: 95%;
+            max-width: 380px;
             box-sizing: border-box;
-            box-shadow: 0 0 30px rgba(168, 85, 247, 0.4), inset 0 0 15px rgba(255,255,255,0.1);
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.3);
             position: relative;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
+            transition: all 0.4s ease; /* Hace que el movimiento sea suave */
+            cursor: default;
+        }
+
+        /* Efecto cuando pasan el cursor por arriba del pozo */
+        .mega-pozo-box:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.7), inset 0 0 20px rgba(255, 255, 255, 0.2);
+            border-color: #c084fc;
         }
 
         .pozo-tag {
@@ -83,11 +107,11 @@
             color: #0f172a;
             font-size: 11px;
             font-weight: 900;
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(234, 179, 8, 0.4);
+            box-shadow: 0 4px 12px rgba(234, 179, 8, 0.5);
         }
 
         .pozo-texto {
@@ -95,75 +119,96 @@
             color: #e9d5ff;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-top: 5px;
         }
 
+        /* Dinero titilante de casino real */
         .pozo-monto {
-            font-size: 42px;
+            font-size: 46px;
             font-weight: 900;
             color: #ffffff;
-            margin: 10px 0;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            margin: 12px 0;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
             letter-spacing: -1px;
+            background: linear-gradient(to bottom, #ffffff, #f3e8ff);
+            -webkit-background-clip: text;
         }
 
         .pozo-sub {
             font-size: 13px;
             color: #f472b6;
             font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
-        /* Grid de Beneficios / Datos clave rápidos */
+        /* GRID DE BENEFICIOS INTERACTIVOS */
         .caracteristicas {
-            width: 90%;
-            max-width: 360px;
+            width: 95%;
+            max-width: 380px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 35px;
+            gap: 14px;
+            margin-bottom: 40px;
         }
 
         .card {
-            background: rgba(30, 41, 59, 0.7);
+            background: rgba(30, 41, 59, 0.6);
             border: 1px solid #334155;
-            padding: 15px 10px;
-            border-radius: 16px;
+            padding: 18px 12px;
+            border-radius: 20px;
             text-align: center;
+            transition: all 0.3s ease;
         }
-        .card-icono { font-size: 24px; margin-bottom: 5px; }
-        .card-t { font-size: 13px; color: #94a3b8; font-weight: 500; }
-        .card-v { font-size: 16px; color: #f1f5f9; font-weight: 700; margin-top: 3px; }
 
-        /* BOTÓN DE ACCIÓN PRINCIPAL MAGNETICO */
-        @keyframes latido {
-            0% { transform: scale(1); box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
-            50% { transform: scale(1.05); box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8); }
-            100% { transform: scale(1); box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+        /* Movimiento reactivo en las tarjetas fijas */
+        .card:hover {
+            background: rgba(47, 55, 87, 0.8);
+            border-color: #38bdf8;
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+        }
+
+        .card-icono { font-size: 26px; margin-bottom: 6px; }
+        .card-t { font-size: 13px; color: #94a3b8; font-weight: 500; }
+        .card-v { font-size: 17px; color: #f1f5f9; font-weight: 700; margin-top: 3px; }
+
+        /* EL ÚNICO BOTÓN CON LINK REAL (EL BOTÓN QUE LATE) */
+        @keyframes latidoVerde {
+            0% { transform: scale(1); box-shadow: 0 4px 25px rgba(34, 197, 94, 0.4); }
+            50% { transform: scale(1.04); box-shadow: 0 4px 35px rgba(34, 197, 94, 0.8); border-color: #ffffff; }
+            100% { transform: scale(1); box-shadow: 0 4px 25px rgba(34, 197, 94, 0.4); }
         }
 
         .btn-jugar {
             display: block;
-            width: 90%;
-            max-width: 360px;
+            width: 95%;
+            max-width: 380px;
             box-sizing: border-box;
-            background: linear-gradient(135deg, #22c55e, #16a34a);
+            background: linear-gradient(135deg, #22c55e, #15803d);
             color: #ffffff;
             text-decoration: none;
             font-size: 20px;
             font-weight: 800;
-            padding: 20px;
-            border-radius: 50px; /* Bordes bien redondeados tipo cápsula moderna */
+            padding: 22px;
+            border-radius: 50px; 
             text-transform: uppercase;
             letter-spacing: 1px;
-            animation: latido 2s infinite ease-in-out;
+            animation: latidoVerde 1.8s infinite ease-in-out;
             border: 2px solid #4ade80;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            transition: all 0.2s ease;
+        }
+
+        /* Cuando pasan el mouse arriba del botón verde, se ilumina más fuerte aún */
+        .btn-jugar:hover {
+            transform: scale(1.06);
+            background: linear-gradient(135deg, #4ade80, #16a34a);
+            cursor: pointer;
         }
 
         .btn-subtexto {
-            font-size: 12px;
+            font-size: 13px;
             color: #64748b;
-            margin-top: 12px;
+            margin-top: 15px;
             font-weight: 500;
         }
     </style>
@@ -173,22 +218,22 @@
 <div class="hero-container">
     <div class="emoji-principal">👑</div>
     <h1>¡Tu Suerte Te Espera!</h1>
-    <div class="tagline">Elegí tu número hoy, jugamos este fin de semana con la Lotería Oficial. ¡Quedan pocos lugares!</div>
+    <div class="tagline">Elegí tu número hoy, jugamos este fin de semana con la Lotería Oficial. ¡No te quedes afuera!</div>
 
-    <!-- EL GANCHO CENTRAL: EL POZO ACUMULADO -->
+    <!-- EL POZO - NO TIENE LINK, SOLO REACCIONA VISUALMENTE -->
     <div class="mega-pozo-box">
-        <div class="pozo-tag">🔥 RECAUDACIÓN EN VIVO</div>
-        <div class="pozo-texto">Pozo Estimado Actual</div>
-        <!-- PONÉ ACÁ EL MONTO A MANO PARA HACERLO ATRACTIVO SI QUERÉS, O DEJA UN ESTIMADO BASE -->
+        <div class="pozo-tag">🔥 POZO EN TIEMPO REAL</div>
+        <div class="pozo-texto">Monto Acumulado</div>
+        <!-- Cambiá este número a mano cuando quieras actualizar el pozo -->
         <div class="pozo-monto">$75.000</div>
         <div class="pozo-sub">¡Si queda vacante, SE ACUMULA! 🚀</div>
     </div>
 
-    <!-- BENEFICIOS / REGLAS RÁPIDAS -->
+    <!-- CARACTERÍSTICAS - NO TIENEN LINK, SE MUEVEN AL COLOCOAR EL CURSOR -->
     <div class="caracteristicas">
         <div class="card">
             <div class="card-icono">🎟️</div>
-            <div class="card-t">Solo hay</div>
+            <div class="card-t">Cupo Máximo</div>
             <div class="card-v">100 Números</div>
         </div>
         <div class="card">
@@ -198,23 +243,23 @@
         </div>
         <div class="card">
             <div class="card-icono">🎰</div>
-            <div class="card-t">Transparente</div>
+            <div class="card-t">Transparencia</div>
             <div class="card-v">Lotería Oficial</div>
         </div>
         <div class="card">
             <div class="card-icono">⚡</div>
             <div class="card-t">Premio Neto</div>
-            <div class="card-v">50% de Todo</div>
+            <div class="card-v">50% Recaudado</div>
         </div>
     </div>
 
-    <!-- EL BOTÓN QUE LOS LLEVA A COMPRAR -->
-    <!-- ⚠️ REEMPLAZÁ EL LINK DE ABAJO POR EL LINK REAL DE TU TABLERO DE RIFAS -->
+    <!-- ⚠️ EL ÚNICO BOTÓN QUE TIENE LINK ELÉCTRICO PARA IR AL TABLERO -->
+    <!-- Reemplazá la frase de abajo por el link real de tu tablero rifa.html -->
     <a href="https://gerardoantao.github.io/mi-rifa-digital/" class="btn-jugar">
         🍀 VER NÚMEROS DISPONIBLES
     </a>
     
-    <div class="btn-subtexto">Tocá para abrir el tablero táctil y reservar tu número de la suerte</div>
+    <div class="btn-subtexto">Tocá para abrir el tablero interactivo y reservar tu número</div>
 </div>
 
 </body>
