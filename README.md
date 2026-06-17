@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>¡Gran Rifa Semanal Digital! 💰</title>
     
-    <!-- Configuración para Redes Sociales (Facebook, Insta, WhatsApp) -->
+    <!-- AQUÍ SE VINCULA TU FOTO Y TU LINK PARA FACEBOOK -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="👑 ¡GRAN RIFA SEMANAL DIGITAL! 💰">
     <meta property="og:description" content="🎰 ¡Solo 100 números! Elegí tu número de la suerte en tiempo real. ¡El pozo está acumulado y crece sin parar! 🔥">
     <meta property="og:url" content="https://gerardoantao.github.io/Redes.rifa/redes.html">
     <meta property="og:image" content="https://gerardoantao.github.io/Redes.rifa/preview.jpg">
+</head>
+
+
 
     <style>
         html, body {
