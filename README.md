@@ -210,7 +210,7 @@
 
     <!-- EL BOTÓN QUE LOS LLEVA A COMPRAR -->
     <!-- ⚠️ REEMPLAZÁ EL LINK DE ABAJO POR EL LINK REAL DE TU TABLERO DE RIFAS -->
-    <a href="https://TU_USUARIO.github.io/mi-rifa-digital/index.html" class="btn-jugar">
+    <a href="https://gerardoantao.github.io/mi-rifa-digital/" class="btn-jugar">
         🍀 VER NÚMEROS DISPONIBLES
     </a>
     
